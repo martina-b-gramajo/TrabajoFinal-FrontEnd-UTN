@@ -1,0 +1,35 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 4px solid var(--color-3);
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-preview {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+span {
+    color: red;
+    font-size: 12px;
+}
+
+.btns-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}

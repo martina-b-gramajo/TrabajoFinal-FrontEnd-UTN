@@ -1,0 +1,117 @@
+button{
+    font-family: var(--font-1);
+    font-weight: 500;
+    font-style: var(--font-1-style-1);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-create {
+    width: 100%; 
+    max-width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    color: var(--color-1);
+    background-color: var(--color-5);
+    border: 3px double var(--color-3);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.btn-create:hover {
+    transform: scale(1.03);
+}
+
+.btn-enter {
+    padding: 10px 15px;
+    background-color: var(--color-6);
+    color: var(--color-2);
+    border-radius: 5px;
+}
+
+.btn-enter:hover {
+    background-color: var(--color-1);
+}
+
+.btn-submit{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid #4CAF50;
+    font-size: 14px;
+    background-color: var(--color-2);
+    color: #4CAF50;
+}
+
+.btn-submit:hover {
+    background-color: #4CAF50;
+    color: var(--color-2);
+}
+
+.btn-danger{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid #f44336;
+    font-size: 14px;
+    background-color: var(--color-2);
+    color: #f44336;
+}
+
+.btn-danger:hover {
+    background-color: #f44336;
+    color: var(--color-2);
+}
+
+.btn-exit{
+    width: 120px;
+    padding: 10px 15px;
+    background-color: var(--color-6);
+    color: var(--color-2);
+    border-radius: 5px;
+}
+
+.btn-exit:hover {
+    background-color: var(--color-5);
+    color: var(--color-1);
+}
+
+.btn-send{
+    background-color: var(--color-6); 
+    border-radius: 4px;
+    color: var(--color-2);
+    height: 40px; 
+    padding: 0 20px; 
+}
+
+.btn-send:hover{
+    background-color: var(--color-1);
+}
+
+@media screen and (max-width: 600px) {
+
+    .btn-create-workspace {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 475px) {
+
+    .btn-enter {
+        padding: 8px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 365px) {
+
+    .btn-create-workspace {
+        width: 250px;
+        font-size: 13px;
+    }
+
+    .btn-enter {
+        padding: 7px;
+        font-size: 9px;
+    }
+}
