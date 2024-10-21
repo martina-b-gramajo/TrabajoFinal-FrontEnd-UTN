@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import ChannelItem from "../ChannelItem/ChannelItem";
-import './ChannelList.css';
-import Button from '../Button/Button';
-import CreateNewChannelModal from '../CreateNewChannelModal/CreateNewChannelModal';
+import React, { useState } from 'react'
+import ChannelItem from '../ChannelItem/ChannelItem'
+import './ChannelList.css'
+import Button from '../Button/Button'
+import CreateNewChannelModal from '../CreateNewChannelModal/CreateNewChannelModal'
 
 const ChannelList = ({ title, channels, id_workspace }) => {
-    const [showCreateModal, setShowCreateModal] = useState(false);
 
-    const toggleModal = () => {
-        setShowCreateModal(prev => !prev);
-    };
+    const [showCreateModal, setShowCreateModal] = useState(false)
+
+    const toggleModal = () => setShowCreateModal(!showCreateModal)
 
     return (
         <div className='channels-list'>
@@ -23,7 +22,7 @@ const ChannelList = ({ title, channels, id_workspace }) => {
                 <CreateNewChannelModal id_workspace={id_workspace} onClose={toggleModal} />
             )}
         </div>
-    );
-};
+    )
+}
 
-export default ChannelList;
+export default ChannelList

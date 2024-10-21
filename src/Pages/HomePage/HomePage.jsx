@@ -11,7 +11,7 @@ const HomePage = () => {
 
     return (
         <div className='home-container'>
-            <h1>Bienvenido a APP_NAME</h1>
+            <h1>Bienvenido a SlackClone</h1>
             <h2>Entornos de trabajo</h2>
             <WorkspaceList workspaces={workspaces} />
             <Link to='/workspace/new'>

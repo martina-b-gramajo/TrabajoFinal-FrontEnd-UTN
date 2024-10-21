@@ -10,7 +10,7 @@ const WorkspaceItem = ({ name, img, id_workspace, id_channel }) => {
             <div className="workspace-name">
                 <h3>{name}</h3>
             </div>
-            <Link to={'/workspace/' + id_workspace + '/' + (id_channel ? id_channel : 1)}> {/*suponemos que siempre entro al primer canal*/}
+            <Link to={'/workspace/' + id_workspace + '/' + (id_channel ? id_channel : 1)}>
                 <Button label='ENTRAR' variant='enter' />
             </Link>
 

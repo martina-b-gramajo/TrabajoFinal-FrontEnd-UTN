@@ -23,9 +23,8 @@ const WorkspacePage = () => {
             </div>
             <div className='middle-container'>
                 <ChannelList channels={workspace.channels} title={'Canales'} id_workspace={id_workspace} />
-                <ChatList messages={messages} />
+                <ChatList messages={messages} channel_name={channel.name} id_workspace={id_workspace} id_channel={id_channel}/>
             </div>
-
         </div>
     )
 }

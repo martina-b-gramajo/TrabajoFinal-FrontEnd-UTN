@@ -5,6 +5,7 @@ import './CreateWorkspaceForm.css'
 import { createWorkspace, getWorkspaces } from '../../data/workspaces'
 import Input from '../Input/Input'
 import { v4 as uuidv4 } from 'uuid'
+import { validateChannel, validateWorkspace } from '../../utils/validations'
 
 const CreateWorkspaceForm = () => {
     const navigation = useNavigate()
@@ -21,7 +22,7 @@ const CreateWorkspaceForm = () => {
             reader.readAsDataURL(file)
             setImage(file)
         }
-    };
+    }
 
     const handleSubmitForm = (evento) => {
         evento.preventDefault()
@@ -33,7 +34,6 @@ const CreateWorkspaceForm = () => {
 
         setError(newErrorState)
 
-        // Si hay errores, no se crea el workspace
         if (newErrorState.workspace || newErrorState.channel) {
             return
         }
@@ -43,7 +43,7 @@ const CreateWorkspaceForm = () => {
             img: imagePreview || defaultImage,
             channels: [
                 {
-                    id: uuidv4(),  // Genera un id único para el canal
+                    id: uuidv4(),  
                     name: channel,
                     messages: []
                 }
@@ -51,9 +51,8 @@ const CreateWorkspaceForm = () => {
         }
 
         createWorkspace(newWorkspace)
-        console.log(getWorkspaces())
         navigation('/')
-    };
+    }
 
     return (
         <div className='form-container'>
@@ -62,7 +61,7 @@ const CreateWorkspaceForm = () => {
                 {error.workspace && <span>{error.workspace}</span>}
                 <Input label='Imagen del entorno' name="workspace-image" type="file" accept="image/*" onChange={handleImageChange} />
                 {imagePreview && <img src={imagePreview} alt="Previsualización" className="image-preview" />}
-                <Input label='Nombre del canal #' name='channel-name' defaultValue='#Saludos' />
+                <Input label='Nombre del canal #' name='channel-name' type='text' />
                 {error.channel && <span>{error.channel}</span>}
                 <div className='btns-container'>
                     <Button label='Crear entorno' variant='submit' />
@@ -75,24 +74,4 @@ const CreateWorkspaceForm = () => {
     )
 }
 
-export default CreateWorkspaceForm;
-
-//Funciones necesarias
-
-const validateWorkspace = (workspace) => {
-    if (!workspace) {
-        return 'El nombre del workspace es requerido.';
-    } else if (workspace.length < 8) {
-        return 'El nombre del workspace debe tener al menos 8 caracteres.'
-    }
-    return ''
-}
-
-const validateChannel = (channel) => {
-    if (!channel) {
-        return 'El nombre del canal es requerido.'
-    } else if (!channel.startsWith('#')) {
-        return 'El nombre del canal debe comenzar con #.'
-    }
-    return ''
-}
+export default CreateWorkspaceForm
