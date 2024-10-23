@@ -31,7 +31,7 @@ const CreateNewChannelModal = ({ id_workspace, onClose }) => {
             <div className='modal-content'>
                 <h2>Crear canal</h2>
                 <form onSubmit={handleCreateChannel}>
-                    <Input label='Nombre del canal #' name='channel-name' type='text'/>
+                    <Input label='Nombre del canal #' name='channel-name' type='text' />
                     {error && <span>{error}</span>}
                     <div className="modal-buttons">
                         <Button label='Confirmar' variant='submit' type="submit" />

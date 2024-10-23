@@ -30,28 +30,15 @@
     color: var(--color4);
 }
 
-/*.workspace-item-button {
-    padding: 10px 15px;
-    background-color: #611F69;
-    font-family: var(--font1);
-    color: var(--color2);
-    font-weight: var(--font1-weight1);
-    font-style: var(--font1-style1);
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.workspace-item-button:hover {
-    background-color: var(--color-1);
-}*/
-
 @media screen and (max-width: 750px) {
+
     .workspace-item {
         width: 500px;
     }
 }
 
 @media screen and (max-width: 600px) {
+
     .workspace-item {
         width: 400px;
         padding: 12px;
@@ -63,6 +50,7 @@
 }
 
 @media screen and (max-width: 475px) {
+
     .workspace-item {
         width: 300px;
     }
@@ -71,14 +59,10 @@
         width: 35px;
         height: 35px;
     }
-
-    /*.workspace-item-button {
-        padding: 8px;
-        font-size: 11px;
-    }*/
 }
 
 @media screen and (max-width: 365px) {
+
     .workspace-item {
         width: 250px;
     }
@@ -91,9 +75,4 @@
     .workspace-name h3 {
         font-size: 14px;
     }
-
-    /*.workspace-item-button {
-        padding: 7px;
-        font-size: 9px;
-    }*/
 }

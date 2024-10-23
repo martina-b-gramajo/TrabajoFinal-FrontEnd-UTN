@@ -2,14 +2,16 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: var(--color-1); 
-    height: 100vh; 
+    background-color: var(--color-1);
+    height: 100vh;
     width: 95vw;
 }
 
 .upper-container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 15px;
     align-items: center;
     margin-bottom: 20px;
 }
@@ -17,12 +19,89 @@
 .upper-container h1 {
     font-size: 24px;
     font-weight: 600;
-    color: var(--color-2); 
+    color: var(--color-2);
 }
 
-.middle-container{
+.burger-menu {
+    display: none;
+}
+
+.middle-container {
     display: flex;
     gap: 40px;
     width: 100%;
     height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+
+    .channels-burger-menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: 0.3s ease all;
+    }
+
+    .channels-burger-menu .channels-list {
+        width: 100%;
+        height: 100vh;
+        background-color: var(--color-1);
+    }
+
+    .channels-burger-menu.open {
+        transform: translateX(0) !important;
+        padding: 20px;
+    }
+
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 8000;
+    }
+
+    .burger-menu span {
+        width: 30px;
+        height: 4px;
+        background: var(--color-2);
+        margin-bottom: 5px;
+        border-radius: 2px;
+        transform-origin: 5px 0px;
+        transition: all 0.2s linear;
+    }
+
+    .burger-menu.open>span {
+        transform: rotate(45deg)translate(0px, 0px);
+    }
+
+    .burger-menu.open>span:nth-child(2) {
+        display: none;
+    }
+
+    .burger-menu.open>span:nth-child(3) {
+        transform: rotate(-45deg)translate(-5px, 1px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .upper-container h1 {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 475px) {
+
+    .upper-container h1 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .upper-container h1 {
+        font-size: 18px;
+    }
 }

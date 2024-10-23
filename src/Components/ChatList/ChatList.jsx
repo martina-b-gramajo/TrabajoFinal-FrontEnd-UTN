@@ -11,7 +11,7 @@ const ChatList = ({ messages, channel_name, id_workspace, id_channel }) => {
     const [input, setInput] = useState('')
 
     const handleSubmitMessage = (event) => {
-        event.preventDefault();
+        event.preventDefault()
         const form = new FormData(event.target)
         const message = form.get('message')
 
@@ -38,9 +38,11 @@ const ChatList = ({ messages, channel_name, id_workspace, id_channel }) => {
     }
 
     return (
-        <div className="chat-list-container">
-            <h2>{channel_name} / Mensajes</h2>
-            <hr />
+        <div className='chat-list-container'>
+            <div className='chat-list-header'>
+                <h2>{channel_name} / Mensajes</h2>
+                <hr />
+            </div>
             {
                 messages.map((message) => {
                     return (
@@ -48,13 +50,16 @@ const ChatList = ({ messages, channel_name, id_workspace, id_channel }) => {
                     )
                 })
             }
-            <form onSubmit={handleSubmitMessage}>
-                <div className='message-submit'>
-                    <Input placeholder='Escriba algo...' name='message' value={input} onChange={handleInputChange}/>
-                    <Button label='Enviar' variant='send' />
-                </div>
-                {error && <span>{error}</span>}
-            </form>
+            <div className='chat-list-footer'>
+                <hr />
+                <form onSubmit={handleSubmitMessage}>
+                    <div className='message-submit'>
+                        <Input placeholder='Escriba algo...' name='message' value={input} onChange={handleInputChange} />
+                        <Button label='Enviar' variant='send' />
+                    </div>
+                    {error && <span>{error}</span>}
+                </form>
+            </div>
         </div>
     )
 }

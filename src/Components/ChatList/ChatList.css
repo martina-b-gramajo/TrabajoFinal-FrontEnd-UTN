@@ -1,30 +1,46 @@
-.chat-list-container{
+.chat-list-container {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    border: 1px solid #ddd; 
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: var(--color-5); 
-    max-height: 70vh; 
-    overflow-y: auto; 
+    background-color: var(--color-5);
+    max-height: 85vh;
+    overflow-y: auto;
 }
 
-
-.chat-list h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: var(--color-1);
+.chat-list-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-5);
+    z-index: 10;
 }
 
-.chat-list-container form {
+h2 {
+    font-size: 24px;
+    color: var(--color-4);
+    margin-top: 20px;
+}
+
+.chat-list-footer {
+    height: 100%;
+    position: sticky;
+    bottom: 0;
+    padding: 10px 0;
+    background-color: var(--color-5);
+    z-index: 10;
+}
+
+.chat-list-footer form {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: auto; 
+    margin-top: auto;
 }
 
-.message-submit{
+.message-submit {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -33,7 +49,19 @@
     flex-grow: 1;
 }
 
-.chat-list-container span{
+.chat-list-container span {
     margin-top: 5px;
     padding-left: 18px;
+}
+
+@media screen and (max-width: 500px) {
+    h2 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    h2 {
+        font-size: 18px;
+    }
 }

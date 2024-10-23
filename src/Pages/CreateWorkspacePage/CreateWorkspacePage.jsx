@@ -2,12 +2,12 @@ import React from 'react'
 import './CreateWorkspacePage.css'
 import CreateWorkspaceForm from '../../Components/CreateWorkspaceForm/CreateWorkspaceForm'
 
-const CreateWorkspacePage = () =>{
+const CreateWorkspacePage = () => {
 
-    return(
+    return (
         <div className='create-workspace-container'>
             <h1>Crear entorno de trabajo</h1>
-            <CreateWorkspaceForm/>
+            <CreateWorkspaceForm />
         </div>
     )
 }

@@ -10,6 +10,25 @@
     color: #000;
 }
 
+.channel-item.active {
+    background-color: var(--color-5);
+}
+
 .channel-item:hover {
-    background-color: #f0f0f0; /* Color de fondo en hover */
+    background-color: var(--color-5);
+}
+
+@media screen and (max-width: 600px) {
+
+    .channel-item a {
+        color: var(--color-2);
+    }
+
+    .channel-item.active {
+        background-color: var(--color-3);
+    }
+
+    .channel-item:hover {
+        background-color: var(--color-3);
+    }
 }

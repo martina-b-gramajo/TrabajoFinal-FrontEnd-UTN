@@ -89,23 +89,36 @@ button{
 
 @media screen and (max-width: 600px) {
 
-    .btn-create-workspace {
+    .btn-create {
         padding: 12px;
         font-size: 15px;
     }
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 515px){
+
+    .btn-exit{
+        width: 90px;
+        padding: 10px 15px;
+    }
+
+}
+
+@media screen and (max-width: 485px) {
 
     .btn-enter {
         padding: 8px;
         font-size: 11px;
     }
+
+    .btn-submit, .btn-danger{
+        padding: 8px 18px;
+    }
 }
 
 @media screen and (max-width: 365px) {
 
-    .btn-create-workspace {
+    .btn-create{
         width: 250px;
         font-size: 13px;
     }
@@ -113,5 +126,10 @@ button{
     .btn-enter {
         padding: 7px;
         font-size: 9px;
+    }
+
+    .btn-submit, .btn-danger{
+        padding: 4px 14px;
+        font-size: 11px;
     }
 }

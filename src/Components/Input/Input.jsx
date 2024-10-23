@@ -8,7 +8,6 @@ const Input = ({ label, name, type, accept, placeholder, value, onChange }) => {
             <label htmlFor={name}>{label}</label>
             <input id={name} name={name} type={type} accept={accept} placeholder={placeholder} value={value} onChange={onChange} />
         </>
-
     )
 }
 

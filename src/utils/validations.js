@@ -16,8 +16,8 @@ export const validateChannel = (channel) => {
     return ''
 }
 
-export const validateMessage = (message) =>{
-    if(!message){
+export const validateMessage = (message) => {
+    if (!message) {
         return 'No has escrito nada'
     }
 
