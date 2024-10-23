@@ -33,3 +33,29 @@ span {
     display: flex;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 500px) {
+
+    .form-container {
+        width: 300px;
+    }
+
+    .image-preview {
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    .form-container {
+        width: 250px;
+    }
+
+    .image-preview {
+        width: 100px;
+    }
+
+    span {
+        font-size: 10px;
+    }
+}

@@ -1,4 +1,4 @@
-.create-workspace-container{
+.create-workspace-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +6,21 @@
     margin-top: 50px;
 }
 
-h1{
+h1 {
     font-size: 24px;
     color: var(--color-2);
+}
+
+@media screen and (max-width: 500px) {
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    h1 {
+        font-size: 17px;
+    }
 }

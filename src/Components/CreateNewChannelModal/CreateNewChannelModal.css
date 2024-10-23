@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .modal-content {
@@ -15,12 +16,19 @@
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 400px; 
-    max-width: 90%; 
+    width: 400px;
+    max-width: 90%;
 }
 
-.modal-buttons{
+.modal-buttons {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 350px) {
+
+    .modal-content {
+        width: 250px;
+    }
 }

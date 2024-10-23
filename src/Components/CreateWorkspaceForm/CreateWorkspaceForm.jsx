@@ -15,7 +15,7 @@ const CreateWorkspaceForm = () => {
     const defaultImage = 'https://cdn.pixabay.com/photo/2020/05/29/13/26/icons-5235125_1280.png'
 
     const handleImageChange = (e) => {
-        const file = e.target.files[0];
+        const file = e.target.files[0]
         if (file) {
             const reader = new FileReader()
             reader.onloadend = () => setImagePreview(reader.result)
@@ -43,7 +43,7 @@ const CreateWorkspaceForm = () => {
             img: imagePreview || defaultImage,
             channels: [
                 {
-                    id: uuidv4(),  
+                    id: uuidv4(),
                     name: channel,
                     messages: []
                 }
@@ -57,10 +57,10 @@ const CreateWorkspaceForm = () => {
     return (
         <div className='form-container'>
             <form onSubmit={handleSubmitForm}>
-                <Input label='Nombre del entorno de trabajo' name='workspace-name' type='text'  />
+                <Input label='Nombre del entorno de trabajo' name='workspace-name' type='text' />
                 {error.workspace && <span>{error.workspace}</span>}
-                <Input label='Imagen del entorno' name="workspace-image" type="file" accept="image/*" onChange={handleImageChange} />
-                {imagePreview && <img src={imagePreview} alt="Previsualización" className="image-preview" />}
+                <Input label='Imagen del entorno' name='workspace-image' type='file' accept='image/*' onChange={handleImageChange} />
+                {imagePreview && <img src={imagePreview} alt='Previsualización' className='image-preview' />}
                 <Input label='Nombre del canal #' name='channel-name' type='text' />
                 {error.channel && <span>{error.channel}</span>}
                 <div className='btns-container'>
