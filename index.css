@@ -23,11 +23,11 @@
 }
 
 body {
-    
+    height: 100%;
     background-color: var(--color-1);
     display: flex;
     justify-content: center;
-    overflow-x: hidden;
+    overflow: hidden; 
     font-family: var(--font-1);
     font-weight: var(--font-1-weight-1);
     font-style: var(--font-1-style-1);

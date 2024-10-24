@@ -7,13 +7,10 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: var(--color-5);
-    max-height: 85vh;
-    overflow-y: auto;
+    height: 85vh; /* Establece una altura máxima */
 }
 
 .chat-list-header {
-    position: sticky;
-    top: 0;
     background-color: var(--color-5);
     z-index: 10;
 }
@@ -24,13 +21,19 @@ h2 {
     margin-top: 20px;
 }
 
+.chat-list-content {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
 .chat-list-footer {
-    height: 100%;
-    position: sticky;
-    bottom: 0;
+    width: 100%;
     padding: 10px 0;
     background-color: var(--color-5);
     z-index: 10;
+    border-top: 1px solid #ddd;
+    position: sticky;
+    bottom: 0;
 }
 
 .chat-list-footer form {

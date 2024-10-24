@@ -9,7 +9,7 @@ export const workspaces_initial_state = [
         channels: [
             {
                 id: 1,
-                name: 'General',
+                name: '#General',
                 messages: [
                     {
                         id: 1,
@@ -39,7 +39,7 @@ export const workspaces_initial_state = [
             },
             {
                 id: 2,
-                name: 'Consultas',
+                name: '#Consultas',
                 messages: [
                     {
                         id: 1,
@@ -77,7 +77,7 @@ export const workspaces_initial_state = [
         channels: [
             {
                 id: 1,
-                name: 'Campañas',
+                name: '#Campañas',
                 messages: [
                     {
                         id: 1,

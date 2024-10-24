@@ -5,7 +5,7 @@ import { createChannel } from '../../data/workspaces'
 import './CreateNewChannelModal.css'
 import { validateChannel } from '../../utils/validations'
 
-const CreateNewChannelModal = ({ id_workspace, onClose }) => {
+const CreateNewChannelModal = ({ id_workspace, onClose, onChannelCreated }) => {
     const [error, setError] = useState('')
 
     const handleCreateChannel = (e) => {
@@ -15,7 +15,6 @@ const CreateNewChannelModal = ({ id_workspace, onClose }) => {
         const channel = form.get('channel-name')
 
         const newErrorState = validateChannel(channel)
-
         setError(newErrorState)
 
         if (newErrorState) {
@@ -23,6 +22,7 @@ const CreateNewChannelModal = ({ id_workspace, onClose }) => {
         }
 
         createChannel(id_workspace, { name: channel, messages: [] })
+        onChannelCreated()
         onClose()
     }
 

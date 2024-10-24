@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getWorkspaceById } from '../../data/workspaces'
 import Button from '../../Components/Button/Button'
@@ -8,11 +8,13 @@ import './WorkspacePage.css'
 
 const WorkspacePage = () => {
     const { id_workspace, id_channel } = useParams()
-    const workspace = getWorkspaceById(id_workspace)
-    const channel = workspace.channels.find(channel => channel.id == id_channel)
-    const messages = channel.messages
+    const [workspace, setWorkspace] = useState(() => getWorkspaceById(id_workspace))
+    const [currentChannel, setCurrentChannel] = useState(workspace.channels.find(channel => channel.id == id_channel))
+    const [isOpen, setIsOpen] = useState(false);
 
-    const [isOpen, setIsOpen] = useState(false)
+    useEffect(() => {
+        setCurrentChannel(workspace.channels.find(channel => channel.id == id_channel))
+    }, [workspace, id_channel])
 
     const toggleMenu = () => {
         setIsOpen(!isOpen)
@@ -20,6 +22,14 @@ const WorkspacePage = () => {
 
     const handleChannelClick = () => {
         setIsOpen(false)
+    }
+
+    const handleChannelCreated = () => {
+        setWorkspace(getWorkspaceById(id_workspace))
+    }
+
+    const handleMessageSent = () => {
+        setWorkspace(getWorkspaceById(id_workspace))
     }
 
     return (
@@ -37,10 +47,22 @@ const WorkspacePage = () => {
             </div>
             <div className='middle-container'>
                 <div className={`channels-burger-menu ${isOpen && 'open'}`}>
-                    <ChannelList channels={workspace.channels} title={'Canales'} id_workspace={id_workspace} onClick={handleChannelClick} />
+                    <ChannelList 
+                        channels={workspace.channels} 
+                        title={'Canales'} 
+                        id_workspace={id_workspace} 
+                        onClick={handleChannelClick} 
+                        onChannelCreated={handleChannelCreated} 
+                    />
                 </div>
                 {!isOpen && (
-                    <ChatList messages={messages} channel_name={channel.name} id_workspace={id_workspace} id_channel={id_channel} />
+                    <ChatList 
+                        messages={currentChannel.messages} 
+                        channel_name={currentChannel.name} 
+                        id_workspace={id_workspace} 
+                        id_channel={id_channel} 
+                        onMessageSent={handleMessageSent} 
+                    />
                 )}
             </div>
         </div>
